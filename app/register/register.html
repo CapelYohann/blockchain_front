@@ -1,0 +1,52 @@
+<style>
+    .vertical-center {
+        min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+        min-height: 10vh; /* These two lines are counted as one :-)       */
+
+        display: flex;
+        align-items: center;
+    }
+
+    #bg {
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+
+        /* Preserve aspet ratio */
+        min-width: 100%;
+        min-height: 100%;
+    }
+</style>
+<img src="image/scrutin.jpg" id="bg" alt="">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"><br/><br/><br/><br/><br/><br/><br/>
+            <div class="row ">
+                <h1 class="col-md-12 text-justify text-light bg-dark" style="border-radius: 1em">
+                    Bienvenu sur notre nouveau site de Vote en Ligne.<br/>
+                    Utilisant la blockchain Ethereum à notre avantage, nous vous prometons un vote sécurisé !
+                    Merci d'appuyer sur le  bouton ci-dessous pour accéder à la page de vote.
+                </h1>
+            </div>
+            <br/><br/>
+            <div class="row">
+                <button type="button" ng-click="register()" class="btn btn-primary offset-md-3 col-md-6" style="height: 130%">
+                    <h1>Register</h1>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+
+<div class="vertical-center">
+        <div class="row">
+            <h1 class="col-md-12" style="background-color: red">You're pleased to register to proceed to the vote page !</h1>
+        </div>
+    </div>
+    <div class="row">
+        <button type="button" class="btn btn-outline-primary offset-md-3 col-md-6">
+            <h1>Register</h1>
+        </button>
+    </div> -->

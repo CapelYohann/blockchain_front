@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1><u>Voting Center</u></h1>
+        </div>
+      </div>
+      <br/><br/><br/>
+      <div class="row">
+        <div class="col-md-2">
+            <button ng-if="isAdmin" ng-click="startElection()" class="btn btn-primary">Start election</button>
+        </div>
+        <div class="col-md-2">
+            <button ng-if="isAdmin" class="btn btn-primary" ng-click="endRound()">endRound()</button>
+        </div>
+        <div class="col-md-5 offset-md-3" ng-if="isAdmin">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" ng-model="candidateName" ng-change="inputChange(this)" placeholder="Nom du candidat" aria-label="">
+            <div class="input-group-prepend">
+              <button class="btn btn-outline-primary" type="button" ng-click="addCandidate()">Add candidate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8" style="background-color: red">
+      <div class="row text-center align-middle">
+        <div class="col" style="margin-bottom: 50px;">
+          <h3>{{bracketName}} bracket</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div ng-if="electionHasStarted">
+            <div class="row">
+              <div class="col-md-4" ng-repeat="(key, value) in bracket" style="margin-bottom: 20px;">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{value['name']}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Candidat - {{key}}</h6>
+                    <p>
+                        <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
+                    </p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="row">
+                      <div class="offset-md-7 col-md-5">
+                        <a href="javascript:void(0)" ng-click="vote(key)" class="card-link" style="cursor:pointer">Vote</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" style="background-color: blue">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <div class="row text-center align-middle">
+            <div class="col" style="margin-bottom: 50px;">
+              <h3>Losing</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row" ng-repeat="(key, value) in loser">
+                <div class="col-md-12" style="margin-bottom: 20px;">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{value['name']}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Candidat - {{key}}</h6>
+                      <p>
+                          <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <div class="row text-center align-middle">
+            <div class="col" style="margin-bottom: 50px;">
+              <h3>Eliminated</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row" ng-repeat="(key, value) in eliminated">
+                <div class="col-md-12" style="margin-bottom: 20px;">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">{{value['name']}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Candidat - {{key}}</h6>
+                      <p>
+                          <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+/* app css stylesheet */
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+menu-component {
+  padding: 0;
+  margin: 0;
+  height: 75px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.md-nav-bar, .md-nav-bar > nav, ._md-nav-bar-list, .md-button._md-nav-button {
+  color: white !important;;
+  border-color: white !important;;
+  /*height: 50px;*/
+}
+
+.md-button._md-nav-button {
+  color: white !important;
+  border-color: white !important;;
+  /*padding: 0;*/
+  /*min-height: 0;*/
+}
